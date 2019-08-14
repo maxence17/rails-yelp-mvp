@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <div class="form-inputs">
+    <%= form_for(@restaurant) do |f| %>
+    <h3>Please add the information below</h3>
+    <p><%= f.label :name %></p>
+    <p><%= f.text_field :name %></p>
+
+    <p><%= f.label :address %></p>
+    <p><%= f.text_field :address, class:"marge" %></p>
+
+    <p><%= f.label :category %></p>
+    <p><%= f.text_field :category %></p>
+
+    <p><%= f.label :phone_number %></p>
+    <p><%= f.select :phone_number, collection: ['chinese', 'italian', 'japanese', 'french', 'belgian'] %></p>
+    <%#= f.select() %>
+
+    <%= f.submit class: "btn btn-primary" %>
+    <%= link_to 'Back to list', restaurants_path, class: "btn btn-dark" %>
+    <% end %>
+  </div>
+</div>

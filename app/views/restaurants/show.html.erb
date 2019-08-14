@@ -1,0 +1,29 @@
+<div class="container mt-5">
+
+  <p id="notice"><%= notice %></p>
+  <p>
+    <h1><%= @restaurant.name %></h1>
+  </p>
+  <p>
+    <strong>Address:</strong>
+    <%= @restaurant.address %>
+  </p>
+  <p>
+    <strong>Category:</strong>
+    <%= @restaurant.category %>
+  </p>
+  <p>
+  <ul>
+    <% @restaurant.reviews.each do |review| %>
+      <li>
+        <%= review.content %>
+      </li>
+    <% end %>
+  </ul>
+
+
+  <h3><%= link_to '► Add a review!', new_restaurant_review_path(@restaurant), class: "btn btn-primary" %></h3>
+
+  <h5><%= link_to 'Back to list', restaurants_path, class: "btn btn-dark" %></h5>
+
+</div>
